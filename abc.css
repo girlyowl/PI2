@@ -1,0 +1,81 @@
+/* Resetando margens e preenchimentos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do corpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Estilo do cabeçalho */
+header {
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+/* Estilo do carrossel */
+.carousel {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.carousel img {
+    width: 100%; /* As imagens ocupam toda a largura do slide */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra nas imagens */
+}
+
+/* Ajustando o tamanho das imagens */
+.slick-center img {
+    transform: scale(1.2); /* A imagem central ficará 20% maior */
+    transition: transform 0.3s ease; /* Suaviza a transição ao trocar de imagem */
+}
+
+.slick-prev, .slick-next {
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo transparente para setas */
+    border-radius: 50%; /* Setas arredondadas */
+    color: white;
+    font-size: 20px;
+    z-index: 1;
+}
+
+.slick-prev {
+    left: 10px;
+}
+
+.slick-next {
+    right: 10px;
+}
+
+/* Estilo dos pontos de navegação */
+.slick-dots {
+    bottom: 10px; /* Distância dos pontos do fundo */
+}
+
+.slick-dots li button:before {
+    color: #333; /* Cor dos pontos */
+}
+
+/* Ajustando a largura dos itens */
+.slick-slide {
+    opacity: 0.5; /* Torna as imagens laterais mais transparentes */
+    transition: opacity 0.3s ease; /* Suaviza a transição */
+}
+
+.slick-center .slick-slide {
+    opacity: 1; /* A imagem central terá opacidade total */
+}
