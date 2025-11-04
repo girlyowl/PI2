@@ -99,3 +99,23 @@ textarea:focus {
 .js-focus-visible *:focus:not(.focus-visible) {
     outline: none !important;
 }
+
+/* Mostrar borda laranja especificamente quando o foco vier do teclado */
+*:focus-visible,
+input:focus-visible,
+button:focus-visible,
+a:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #f97316 !important;
+    outline-offset: 2px !important;
+    box-shadow: none !important;
+    border-color: #f97316 !important;
+}
+
+/* Caso existam abas (tabs) com role="tab" ou classe .tab */
+[role="tab"]:focus,
+.tab:focus {
+    outline: 3px solid #f97316 !important;
+    outline-offset: 2px !important;
+}
