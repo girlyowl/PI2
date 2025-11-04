@@ -45,12 +45,12 @@ $integrantes = [
       <h2 class="text-2xl font-semibold text-blue-700 mb-5">Sobre o Projeto</h2>
       <div class="text-sm text-gray-700 leading-relaxed text-left">
         <p class="mb-3"><strong class="text-blue-700">🎓 Título do Trabalho:</strong> <em>Baixada em Cena: Mapeamento e Promoção de Eventos Culturais na Baixada Santista</em></p>
-        <p class="mb-3"><strong class="text-blue-700">👨‍🏫 Orientador do PI:</strong> Guilherme Lima Juvino de Paula</p>
-        <p class="mb-3"><strong class="text-blue-700">🎯 Objetivo Geral:</strong> Mapear e promover eventos culturais na Baixada Santista.</p>
+        <p class="mb-3"><strong class="text-blue-700">👨‍🏫 Orientador do PI:</strong> Matheus Sanches de Sá Bergamo </p>
+        <p class="mb-3"><strong class="text-blue-700">🎯 Objetivo Geral:</strong> Mapear e promover eventos culturais na Baixada Santista de maneira acessível.</p>
         <p><strong class="text-blue-700">📌 Objetivos Específicos:</strong></p>
         <ul class="list-disc list-inside ml-4 text-gray-600 mt-2">
-          <li>Identificar os principais desafios de acesso à cultura na região;</li>
-          <li>Desenvolver uma plataforma digital para centralizar informações sobre eventos culturais;</li>
+          <li>Identificar os principais desafios de acesso para pessoas com deficiência</li>
+          <li>Desenvolver uma plataforma digital responsiva e acessível para centralizar informações sobre eventos culturais;</li>
           <li>Promover a participação da comunidade em atividades culturais.</li>
         </ul>
       </div>
