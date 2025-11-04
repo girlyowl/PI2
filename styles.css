@@ -46,3 +46,31 @@ h1 {
     max-width: 200px;
     margin: 0 auto;
 }
+
+/* Regras de foco específicas por página (outline laranja) */
+body.login-page :focus,
+body.evento-page :focus {
+    outline: 3px solid #f97316 !important; /* laranja */
+    outline-offset: 2px !important;
+}
+
+body.login-page input:focus,
+body.login-page button:focus,
+body.login-page a:focus,
+body.login-page select:focus,
+body.login-page textarea:focus,
+body.evento-page input:focus,
+body.evento-page button:focus,
+body.evento-page a:focus,
+body.evento-page select:focus,
+body.evento-page textarea:focus {
+    outline: 3px solid #f97316 !important;
+    outline-offset: 2px !important;
+    border-color: #f97316 !important;
+}
+
+/* Mantém compatibilidade com focus-visible polyfill/JS */
+.js-focus-visible body.login-page :focus:not(.focus-visible),
+.js-focus-visible body.evento-page :focus:not(.focus-visible) {
+    outline: none !important;
+}
