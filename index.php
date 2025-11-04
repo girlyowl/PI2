@@ -172,7 +172,7 @@ input:focus, select:focus, textarea:focus {
             <span class="text-base font-semibold **text-white** flex flex-col w-full group" tabindex="0" aria-label="Título do projeto">
                 <span>🎭 Projeto Integrador II - Baixada em Cena</span>
                 <span class="text-right ml-auto">
-                    <span class="font-serif italic **text-indigo-300** opacity-0 transform translate-y-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0 group-focus:opacity-100 group-focus:translate-y-0" aria-hidden="false">+ inclusiva</span>
+                    <span class="font-serif italic text-purple-300 opacity-0 transform translate-y-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0 group-focus:opacity-100 group-focus:translate-y-0" aria-hidden="false">+ inclusiva</span>
                 </span>
             </span>
         </div>
