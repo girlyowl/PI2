@@ -53,33 +53,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <form method="post" class="space-y-6">
         <div>
             <label class="block text-sm font-medium text-gray-700 mb-1">Título:</label>
-            <input type="text" name="titulo" value="<?php echo htmlspecialchars($evento['titulo']); ?>" required class="w-full border border-gray-300 rounded px-4 py-2">
+            <input type="text" name="titulo" value="<?php echo h($evento['titulo']); ?>" required class="w-full border border-gray-300 rounded px-4 py-2">
         </div>
 
         <div>
             <label class="block text-sm font-medium text-gray-700 mb-1">Descrição:</label>
-            <textarea name="descricao" required class="w-full border border-gray-300 rounded px-4 py-2 h-32"><?php echo htmlspecialchars($evento['descricao']); ?></textarea>
+            <textarea name="descricao" required class="w-full border border-gray-300 rounded px-4 py-2 h-32"><?php echo h($evento['descricao']); ?></textarea>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">Data:</label>
-                <input type="date" name="data" value="<?php echo $evento['data']; ?>" required class="w-full border border-gray-300 rounded px-4 py-2">
+                <input type="date" name="data" value="<?php echo h($evento['data']); ?>" required class="w-full border border-gray-300 rounded px-4 py-2">
             </div>
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">Horário:</label>
-                <input type="time" name="horario" value="<?php echo $evento['horario']; ?>" required class="w-full border border-gray-300 rounded px-4 py-2">
+                <input type="time" name="horario" value="<?php echo h($evento['horario']); ?>" required class="w-full border border-gray-300 rounded px-4 py-2">
             </div>
         </div>
 
         <div>
             <label class="block text-sm font-medium text-gray-700 mb-1">Cidade:</label>
-            <input type="text" name="cidade" value="<?php echo htmlspecialchars($evento['cidade']); ?>" required class="w-full border border-gray-300 rounded px-4 py-2">
+            <input type="text" name="cidade" value="<?php echo h($evento['cidade']); ?>" required class="w-full border border-gray-300 rounded px-4 py-2">
         </div>
 
         <div>
             <label class="block text-sm font-medium text-gray-700 mb-1">Endereço:</label>
-            <input type="text" name="endereco" value="<?php echo htmlspecialchars($evento['endereco'] ?? ''); ?>" class="w-full border border-gray-300 rounded px-4 py-2">
+            <input type="text" name="endereco" value="<?php echo h($evento['endereco'] ?? ''); ?>" class="w-full border border-gray-300 rounded px-4 py-2">
         </div>
 
         <button type="submit" class="bg-indigo-600 text-white px-6 py-2 rounded-lg shadow hover:bg-indigo-700 transition">

@@ -21,7 +21,7 @@ if (!$evento) {
 }
 
 // formatações seguras
-function e($v) { return htmlspecialchars($v); }
+function e($v) { return h($v); }
 
 ?>
 <!DOCTYPE html>

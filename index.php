@@ -177,10 +177,10 @@ input:focus, select:focus, textarea:focus {
         </div>
 <form method="GET" action="index.php" class="flex flex-1 justify-center mx-2">
             <div class="flex items-center w-full max-w-md border border-gray-300 rounded-lg px-3 py-1 bg-white shadow-sm hover:shadow-md transition">
-                <label for="search-query" class="sr-only">Pesquisar eventos, teatros, shows e cursos</label>
-                <input id="search-query" type="text" name="query" placeholder="Pesquisar eventos, teatros, shows, cursos" 
-                        class="flex-1 border-none outline-none text-sm pl-2 text-gray-800"
-                        value="<?php echo htmlspecialchars($query); ?>" />
+        <label for="search-query" class="sr-only">Pesquisar eventos, teatros, shows e cursos</label>
+        <input id="search-query" type="text" name="query" placeholder="Pesquisar eventos, teatros, shows, cursos" 
+            class="flex-1 border-none outline-none text-sm pl-2 text-gray-800"
+            value="<?php echo h($query); ?>" />
                 <button type="submit" class="bg-indigo-600 text-white px-3 py-1 text-sm rounded-md shadow hover:bg-indigo-700 transition ml-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500">
                     Buscar
                 </button>
@@ -190,7 +190,7 @@ input:focus, select:focus, textarea:focus {
         <div class="flex items-center space-x-3" role="navigation" aria-label="Menu principal">
     <?php if (isset($_SESSION['logado']) && $_SESSION['logado'] === true): ?>
         <span class="text-white text-sm">
-            Bem-vindo, <?php echo isset($_SESSION['usuario_nome']) ? htmlspecialchars($_SESSION['usuario_nome']) : 'Visitante'; ?>
+            Bem-vindo, <?php echo isset($_SESSION['usuario_nome']) ? h($_SESSION['usuario_nome']) : 'Visitante'; ?>
         </span>
     <a href="criar-eventos.php" class="bg-indigo-600 text-white px-3 py-1 text-sm rounded-md shadow hover:bg-indigo-700 transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500">Criar Evento</a>
     <a href="gerenciar-eventos.php" class="bg-indigo-600 text-white px-3 py-1 text-sm rounded-md shadow hover:bg-indigo-700 transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500">Gerenciar</a>
@@ -220,21 +220,21 @@ input:focus, select:focus, textarea:focus {
                             $alt_text = 'Cartaz do evento "Tardezinha da Noite" — imagem do palco com iluminação roxa e público, destacando a programação musical.';
                         }
                     ?>
-                    <img src="<?php echo $evento['imagem']; ?>" 
-                            alt="<?php echo htmlspecialchars($alt_text); ?>"
+            <img src="<?php echo $evento['imagem']; ?>" 
+                alt="<?php echo h($alt_text); ?>"
                             role="img"
-                            aria-label="<?php echo htmlspecialchars($evento['titulo']) . ' em ' . htmlspecialchars($evento['cidade']) . ' no dia ' . date('d/m/Y', strtotime($evento['data'])); ?>">
+                aria-label="<?php echo h($evento['titulo']) . ' em ' . h($evento['cidade']) . ' no dia ' . date('d/m/Y', strtotime($evento['data'])); ?>">
                 <?php else: ?>
                     <div class="w-full h-72 bg-gray-300 flex items-center justify-center rounded-xl" role="img" aria-label="Imagem não disponível">
                         <span class="text-gray-700">Sem imagem</span>
                     </div>
                 <?php endif; ?>
                 <div class="p-4 text-center">
-                    <h2 class="text-lg font-bold text-gray-800"><?php echo htmlspecialchars($evento['titulo']); ?></h2>
-                    <p class="text-sm text-gray-600"><?php echo htmlspecialchars($evento['cidade']); ?> - <?php echo date('d/m/Y', strtotime($evento['data'])); ?></p>
+                    <h2 class="text-lg font-bold text-gray-800"><?php echo h($evento['titulo']); ?></h2>
+                    <p class="text-sm text-gray-600"><?php echo h($evento['cidade']); ?> - <?php echo date('d/m/Y', strtotime($evento['data'])); ?></p>
                     <a href="evento.php?id=<?php echo $evento['id']; ?>" 
                         class="inline-block mt-2 text-indigo-600 hover:text-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
-                        aria-label="Ver detalhes do evento <?php echo htmlspecialchars($evento['titulo']); ?>">
+                        aria-label="Ver detalhes do evento <?php echo h($evento['titulo']); ?>">
                         Ver detalhes
                     </a>
                 </div>
@@ -256,19 +256,19 @@ input:focus, select:focus, textarea:focus {
             <select id="select-cidade" name="cidade" class="border-2 border-gray-300 rounded-lg px-4 py-2 w-56">
                 <option value="">Selecione uma cidade</option>
                 <?php foreach ($cidades as $cidade_opcao): ?>
-                    <option value="<?php echo htmlspecialchars($cidade_opcao['cidade']); ?>" <?php if ($cidade == $cidade_opcao['cidade']) echo 'selected'; ?>>
-                        <?php echo htmlspecialchars($cidade_opcao['cidade']); ?>
+                <option value="<?php echo h($cidade_opcao['cidade']); ?>" <?php if ($cidade == $cidade_opcao['cidade']) echo 'selected'; ?>>
+                        <?php echo h($cidade_opcao['cidade']); ?>
                     </option>
                 <?php endforeach; ?>
             </select>
         </div>
         <div>
             <label for="data-inicio" class="block text-sm font-medium text-gray-700">Data de Início:</label>
-            <input type="date" id="data-inicio" name="data_inicio" value="<?php echo htmlspecialchars($data_inicio); ?>" class="border-2 border-gray-300 rounded-lg px-4 py-2 w-56">
+            <input type="date" id="data-inicio" name="data_inicio" value="<?php echo h($data_inicio); ?>" class="border-2 border-gray-300 rounded-lg px-4 py-2 w-56">
         </div>
         <div>
             <label for="data-fim" class="block text-sm font-medium text-gray-700">Data de Fim:</label>
-            <input type="date" id="data-fim" name="data_fim" value="<?php echo htmlspecialchars($data_fim); ?>" class="border-2 border-gray-300 rounded-lg px-4 py-2 w-56">
+            <input type="date" id="data-fim" name="data_fim" value="<?php echo h($data_fim); ?>" class="border-2 border-gray-300 rounded-lg px-4 py-2 w-56">
         </div>
     <button type="submit" class="bg-indigo-600 text-white px-6 py-2 rounded-lg shadow hover:bg-indigo-700 transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500">Filtrar</button>
     </form>
@@ -287,7 +287,7 @@ input:focus, select:focus, textarea:focus {
                 $card_alt = 'Cartaz do evento "Tardezinha da Noite" mostrando artistas ao vivo e público no teatro.';
             }
         ?>
-        <img src="<?php echo $evento['imagem']; ?>" alt="<?php echo htmlspecialchars($card_alt); ?>" class="w-full h-48 object-cover rounded-lg">
+    <img src="<?php echo $evento['imagem']; ?>" alt="<?php echo h($card_alt); ?>" class="w-full h-48 object-cover rounded-lg">
     <?php else: ?>
         <div class="w-full h-48 bg-gray-300 rounded-lg flex items-center justify-center">
              <span class="text-gray-700">Sem imagem</span>
@@ -301,9 +301,9 @@ input:focus, select:focus, textarea:focus {
     <?php endif; ?>
 </div>
 
-                    <h3 class="text-lg font-semibold text-gray-800"><?php echo htmlspecialchars($evento['titulo']); ?></h3>
+                    <h3 class="text-lg font-semibold text-gray-800"><?php echo h($evento['titulo']); ?></h3>
                     <p class="text-sm text-gray-600"><?php echo date('d/m/Y', strtotime($evento['data'])); ?></p>
-                    <p class="text-sm text-gray-600"><?php echo htmlspecialchars($evento['cidade']); ?></p>
+                    <p class="text-sm text-gray-600"><?php echo h($evento['cidade']); ?></p>
                                  <a href="evento.php?id=<?php echo $evento['id']; ?>" class="block mt-4 text-center text-indigo-600 font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500">Ver detalhes</a>
                     
                 </div>

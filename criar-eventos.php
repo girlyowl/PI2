@@ -107,8 +107,8 @@ $cidades = $stmt_cidades->fetchAll();
                 <select name="cidade" id="cidade" class="border border-gray-300 rounded-lg px-4 py-2 w-full" required>
                     <option value="">Selecione uma cidade</option>
                     <?php foreach ($cidades as $cidade_opcao): ?>
-                        <option value="<?= htmlspecialchars($cidade_opcao['cidade']) ?>">
-                            <?= htmlspecialchars($cidade_opcao['cidade']) ?>
+                        <option value="<?= h($cidade_opcao['cidade']) ?>">
+                            <?= h($cidade_opcao['cidade']) ?>
                         </option>
                     <?php endforeach; ?>
                 </select>

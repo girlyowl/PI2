@@ -18,4 +18,18 @@ try {
 } catch (PDOException $e) {
     echo "Erro na conexão: " . $e->getMessage();
 }
+
+// Helper para garantir saída em UTF-8 e escapar HTML com segurança
+if (!function_exists('h')) {
+    function h($value) {
+        if ($value === null) return '';
+        // Se já for UTF-8 válido, apenas escape; caso contrário, converte de ISO-8859-1 para UTF-8
+        if (!mb_check_encoding($value, 'UTF-8')) {
+            $value = mb_convert_encoding($value, 'UTF-8', 'ISO-8859-1');
+        }
+        return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
+    }
+}
+
+?>
 ?>

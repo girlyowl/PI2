@@ -35,7 +35,7 @@ if (!$id_evento) {
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title><?php echo $evento ? htmlspecialchars($evento['nome']) : 'Detalhes do Evento'; ?></title>
+    <title><?php echo $evento ? h($evento['nome']) : 'Detalhes do Evento'; ?></title>
     <link rel="stylesheet" href="styles.css"> 
     <style>
         body { font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f9; }
@@ -55,15 +55,15 @@ if (!$id_evento) {
         <h2 style="color: red;"><?php echo $mensagem_erro; ?></h2>
     <?php elseif ($evento): ?>
         
-        <h1><?php echo htmlspecialchars($evento['nome']); ?></h1>
+    <h1><?php echo h($evento['nome']); ?></h1>
 
         <div class="info-box">
             <p><strong>🗓️ Data e Hora:</strong> <?php echo date('d/m/Y H:i', strtotime($evento['data_hora'])); ?></p>
-            <p><strong>📍 Local:</strong> <?php echo htmlspecialchars($evento['local']); ?></p>
+            <p><strong>📍 Local:</strong> <?php echo h($evento['local']); ?></p>
         </div>
 
         <h2>Detalhes do Evento</h2>
-        <p><?php echo nl2br(htmlspecialchars($evento['descricao'] ?? 'Nenhuma descrição detalhada fornecida.')); ?></p>
+    <p><?php echo nl2br(h($evento['descricao'] ?? 'Nenhuma descrição detalhada fornecida.')); ?></p>
 
         <hr>
         

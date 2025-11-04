@@ -31,7 +31,7 @@ $eventos = $stmt->fetchAll();
   <div class="max-w-6xl mx-auto flex justify-between items-center">
     <div>
         <h1 class="text-3xl font-extrabold">Gerenciar Meus Eventos</h1>
-        <p class="text-sm mt-1">Bem-vindo, <span class="font-semibold"><?php echo htmlspecialchars($usuario_nome); ?></span>!</p>
+    <p class="text-sm mt-1">Bem-vindo, <span class="font-semibold"><?php echo h($usuario_nome); ?></span>!</p>
     </div>
 
     <div class="flex items-center space-x-4">
@@ -52,11 +52,11 @@ $eventos = $stmt->fetchAll();
         <?php foreach ($eventos as $evento): ?>
             <div class="bg-white p-4 shadow rounded-lg mb-4 flex justify-between items-center">
                 <div>
-                    <h2 class="text-lg font-semibold text-gray-800"><?php echo htmlspecialchars($evento['titulo']); ?></h2>
+                    <h2 class="text-lg font-semibold text-gray-800"><?php echo h($evento['titulo']); ?></h2>
                     <p class="text-sm text-gray-600">
                         <?php echo date('d/m/Y', strtotime($evento['data'])); ?> às 
                         <?php echo date('H:i', strtotime($evento['horario'])); ?> em 
-                        <?php echo htmlspecialchars($evento['cidade']); ?>
+                        <?php echo h($evento['cidade']); ?>
                     </p>
                 </div>
                 <div class="flex space-x-2">

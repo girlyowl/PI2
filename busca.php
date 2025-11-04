@@ -56,11 +56,11 @@ $eventos = $stmt->fetchAll();
                         <img src="<?php echo $evento['imagem']; ?>" alt="Imagem do evento" class="w-full h-56 object-cover">
                     <?php endif; ?>
                     <div class="p-4">
-                        <h2 class="text-xl font-bold text-gray-800 mb-2"><?php echo htmlspecialchars($evento['titulo']); ?></h2>
-                        <p class="text-gray-600 mb-2"><?php echo nl2br(htmlspecialchars($evento['descricao'])); ?></p>
+                        <h2 class="text-xl font-bold text-gray-800 mb-2"><?php echo h($evento['titulo']); ?></h2>
+                        <p class="text-gray-600 mb-2"><?php echo nl2br(h($evento['descricao'])); ?></p>
                         <p class="text-sm text-gray-500"><strong>Data:</strong> <?php echo date('d/m/Y', strtotime($evento['data'])); ?></p>
                         <p class="text-sm text-gray-500"><strong>Horário:</strong> <?php echo date('H:i', strtotime($evento['horario'])); ?></p>
-                        <p class="text-sm text-gray-500"><strong>Cidade:</strong> <?php echo htmlspecialchars($evento['cidade']); ?></p>
+                        <p class="text-sm text-gray-500"><strong>Cidade:</strong> <?php echo h($evento['cidade']); ?></p>
                     </div>
                 </div>
             <?php endforeach; ?>
