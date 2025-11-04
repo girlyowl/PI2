@@ -38,7 +38,7 @@ function e($v) { return htmlspecialchars($v); }
     <a href="#main-content" class="sr-only">Pular para o conteúdo</a>
     <header class="bg-[#4C32CC] text-white p-4 shadow-md">
         <div class="max-w-6xl mx-auto flex items-center justify-between" role="navigation" aria-label="Menu principal">
-            <h1 class="text-xl font-bold"><?php echo e($evento['titulo']); ?></h1>
+            <h1 class="text-xl font-bold text-black"><?php echo e($evento['titulo']); ?></h1>
             <a href="index.php" class="bg-indigo-600 text-white px-3 py-1 text-sm rounded-md shadow hover:bg-indigo-700 transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500">Voltar</a>
         </div>
     </header>
