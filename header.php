@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto Integrador - UNIVESP</title>
-    <link rel="stylesheet" href="style.css"> <!-- Se estiver usando um CSS externo -->
+    <link rel="stylesheet" href="styles.css"> <!-- Se estiver usando um CSS externo -->
     <style>
         body {
             margin: 0;

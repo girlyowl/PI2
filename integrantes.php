@@ -18,6 +18,7 @@ $integrantes = [
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Projeto Integrador 1 - Baixada em Cena</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
   <style>
     html { scroll-behavior: smooth; }
   </style>

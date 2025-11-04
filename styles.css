@@ -49,7 +49,8 @@ h1 {
 
 /* Regras de foco específicas por página (outline laranja) */
 body.login-page :focus,
-body.evento-page :focus {
+body.evento-page :focus,
+body.criar-eventos-page :focus {
     outline: 3px solid #f97316 !important; /* laranja */
     outline-offset: 2px !important;
 }
@@ -63,7 +64,12 @@ body.evento-page input:focus,
 body.evento-page button:focus,
 body.evento-page a:focus,
 body.evento-page select:focus,
-body.evento-page textarea:focus {
+body.evento-page textarea:focus,
+body.criar-eventos-page input:focus,
+body.criar-eventos-page button:focus,
+body.criar-eventos-page a:focus,
+body.criar-eventos-page select:focus,
+body.criar-eventos-page textarea:focus {
     outline: 3px solid #f97316 !important;
     outline-offset: 2px !important;
     border-color: #f97316 !important;
@@ -71,6 +77,25 @@ body.evento-page textarea:focus {
 
 /* Mantém compatibilidade com focus-visible polyfill/JS */
 .js-focus-visible body.login-page :focus:not(.focus-visible),
-.js-focus-visible body.evento-page :focus:not(.focus-visible) {
+.js-focus-visible body.evento-page :focus:not(.focus-visible),
+.js-focus-visible body.criar-eventos-page :focus:not(.focus-visible) {
+    outline: none !important;
+}
+
+/* Regra global: garante contorno laranja em todas as páginas */
+*:focus,
+input:focus,
+button:focus,
+a:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid #f97316 !important;
+    outline-offset: 2px !important;
+    box-shadow: none !important;
+    border-color: #f97316 !important;
+}
+
+/* Não mostrar outline quando o foco não for por teclado (focus-visible) */
+.js-focus-visible *:focus:not(.focus-visible) {
     outline: none !important;
 }

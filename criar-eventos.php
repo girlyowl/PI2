@@ -107,8 +107,9 @@ $cidades = $stmt_cidades->fetchAll();
     <meta charset="UTF-8">
     <title>Criar Evento - Baixada Santista</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-50 criar-eventos-page">
 
 <header class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-6">
   <div class="max-w-6xl mx-auto flex justify-between items-center">
