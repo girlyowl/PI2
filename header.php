@@ -42,11 +42,10 @@
         .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
         .sr-only:focus { position: static; width: auto; height: auto; margin: 0; overflow: visible; clip: auto; white-space: normal; }
     </style>
-</head>
-<body>
-    <a href="#main-content" class="sr-only">Pular para o conteúdo</a>
+    </head>
+    <body>
 
-<header role="banner">
+    <header role="banner">
     <h1>Projeto Integrador - UNIVESP</h1>
     <nav role="navigation" aria-label="Menu principal">
         <a href="index.php" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500">Início</a>

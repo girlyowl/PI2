@@ -35,7 +35,6 @@ function e($v) { return htmlspecialchars($v); }
     <div id="notifications" role="status" aria-live="polite" class="sr-only"></div>
 </head>
 <body class="bg-gray-50 min-h-screen evento-page">
-    <a href="#main-content" class="sr-only">Pular para o conteúdo</a>
     <header class="bg-[#4C32CC] text-white p-4 shadow-md">
         <div class="max-w-6xl mx-auto flex items-center justify-between" role="navigation" aria-label="Menu principal">
             <h1 class="text-xl font-bold text-black"><?php echo e($evento['titulo']); ?></h1>

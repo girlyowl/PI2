@@ -164,7 +164,6 @@ input:focus, select:focus, textarea:focus {
 </style>
 </head>
 <body class="bg-gray-50 min-h-screen">
-    <a href="#main-content" class="sr-only">Pular para o conteúdo</a>
 
 <header class="bg-[#4C32CC] **text-white** p-4 w-full shadow-md">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
