@@ -133,9 +133,15 @@ input:focus, select:focus, textarea:focus {
 
 
 .swiper-pagination {
-    bottom: -40px !important;
-    text-align: center;
-    z-index: 9;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 12px !important; /* posiciona dentro do container para ficar sempre visível */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 30;
+    pointer-events: auto;
 }
 
 .swiper-pagination-bullet {
