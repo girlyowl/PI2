@@ -1,5 +1,14 @@
 <?php
+session_start();
 include('db.php');
+
+// Protege endpoint: somente usuários autenticados podem criar eventos por aqui
+if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
+    // Retornar 403 em requisições automatizadas
+    http_response_code(403);
+    echo "Acesso negado. Faça login para criar eventos.";
+    exit;
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $titulo = isset($_POST['titulo']) ? trim($_POST['titulo']) : '';
@@ -21,9 +30,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-    if ($titulo && $descricao && $data && $cidade) {
+    $usuario_id = isset($_SESSION['usuario_id']) ? intval($_SESSION['usuario_id']) : null;
+
+    if ($titulo && $descricao && $data && $cidade && $usuario_id) {
         try {
-            $sql = "INSERT INTO eventos (titulo, descricao, data, cidade, imagem) VALUES (:titulo, :descricao, :data, :cidade, :imagem)";
+            // Inclui usuario_id para rastreabilidade e evita inserções anônimas
+            $sql = "INSERT INTO eventos (titulo, descricao, data, cidade, imagem, usuario_id) VALUES (:titulo, :descricao, :data, :cidade, :imagem, :usuario_id)";
             $stmt = $pdo->prepare($sql);
 
             $stmt->bindParam(':titulo', $titulo);
@@ -31,6 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->bindParam(':data', $data);
             $stmt->bindParam(':cidade', $cidade);
             $stmt->bindParam(':imagem', $imagem);
+            $stmt->bindParam(':usuario_id', $usuario_id, PDO::PARAM_INT);
 
             $stmt->execute();
 
