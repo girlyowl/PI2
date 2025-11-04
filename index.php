@@ -216,8 +216,15 @@ input:focus, select:focus, textarea:focus {
             <?php foreach ($eventos_carrossel as $evento): ?>
             <div class="swiper-slide bg-white rounded-xl shadow-lg" role="group" aria-roledescription="slide">
                 <?php if (!empty($evento['imagem']) && file_exists(__DIR__ . '/' . $evento['imagem'])): ?>
+                    <?php
+                        // Texto alternativo mais descritivo para o evento específico "Tardezinha da noite"
+                        $alt_text = $evento['titulo'];
+                        if (stripos($evento['titulo'], 'tardezinha') !== false) {
+                            $alt_text = 'Cartaz do evento "Tardezinha da Noite" — imagem do palco com iluminação roxa e público, destacando a programação musical.';
+                        }
+                    ?>
                     <img src="<?php echo $evento['imagem']; ?>" 
-                            alt="<?php echo htmlspecialchars($evento['titulo']); ?>"
+                            alt="<?php echo htmlspecialchars($alt_text); ?>"
                             role="img"
                             aria-label="<?php echo htmlspecialchars($evento['titulo']) . ' em ' . htmlspecialchars($evento['cidade']) . ' no dia ' . date('d/m/Y', strtotime($evento['data'])); ?>">
                 <?php else: ?>
@@ -277,7 +284,13 @@ input:focus, select:focus, textarea:focus {
                 <div class="bg-white shadow rounded-lg p-4">
                     <div class="relative mb-4">
     <?php if (!empty($evento['imagem']) && file_exists(__DIR__ . '/' . $evento['imagem'])): ?>
-        <img src="<?php echo $evento['imagem']; ?>" alt="<?php echo htmlspecialchars($evento['titulo']); ?>" class="w-full h-48 object-cover rounded-lg">
+        <?php
+            $card_alt = $evento['titulo'];
+            if (stripos($evento['titulo'], 'tardezinha') !== false) {
+                $card_alt = 'Cartaz do evento "Tardezinha da Noite" mostrando artistas ao vivo e público no teatro.';
+            }
+        ?>
+        <img src="<?php echo $evento['imagem']; ?>" alt="<?php echo htmlspecialchars($card_alt); ?>" class="w-full h-48 object-cover rounded-lg">
     <?php else: ?>
         <div class="w-full h-48 bg-gray-300 rounded-lg flex items-center justify-center">
              <span class="text-gray-700">Sem imagem</span>
