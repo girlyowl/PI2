@@ -52,48 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['criar_evento'])) {
     }
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['importar_eventos'])) {
-    if (isset($_FILES['arquivo_csv']) && $_FILES['arquivo_csv']['error'] === UPLOAD_ERR_OK) {
-        $arquivo = $_FILES['arquivo_csv']['tmp_name'];
 
-        if (($handle = fopen($arquivo, "r")) !== FALSE) {
-            fgetcsv($handle, 1000, ",");
-
-            while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
-                $titulo = $data[0];
-                $descricao = $data[1];
-                $data_evento = $data[2];
-                $horario = $data[3];
-                $endereco = $data[4];
-                $cidade = $data[5];
-
-                try {
-                    $sql = "INSERT INTO eventos (titulo, descricao, data, horario, endereco, cidade, usuario_id) 
-                            VALUES (:titulo, :descricao, :data, :horario, :endereco, :cidade, :usuario_id)";
-                    $stmt = $pdo->prepare($sql);
-                    $stmt->execute([
-                        ':titulo' => $titulo,
-                        ':descricao' => $descricao,
-                        ':data' => $data_evento,
-                        ':horario' => $horario,
-                        ':endereco' => $endereco,
-                        ':cidade' => $cidade,
-                        ':usuario_id' => $_SESSION['usuario_id']
-                    ]);
-                } catch (PDOException $e) {
-                    echo "Erro ao importar evento: " . $e->getMessage();
-                }
-            }
-
-            fclose($handle);
-            echo "Eventos importados com sucesso!";
-        } else {
-            echo "Erro ao abrir o arquivo CSV.";
-        }
-    } else {
-        echo "Nenhum arquivo CSV enviado.";
-    }
-}
 
 $sql_cidades = "SELECT cidade FROM cidades_baixada ORDER BY cidade";
 $stmt_cidades = $pdo->prepare($sql_cidades);
@@ -161,18 +120,6 @@ $cidades = $stmt_cidades->fetchAll();
         </div>
         <div class="mt-6 text-center">
             <button type="submit" name="criar_evento" class="bg-indigo-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-indigo-700 transition-all">Criar Evento</button>
-        </div>
-    </form>
-</div>
-
-<div class="max-w-6xl mx-auto p-6 mt-6">
-    <form method="POST" enctype="multipart/form-data" class="bg-white p-6 rounded-lg shadow-md">
-        <div>
-            <label for="arquivo_csv" class="block text-sm font-medium text-gray-700">Importar Eventos em Massa (CSV):</label>
-            <input type="file" name="arquivo_csv" id="arquivo_csv" class="border border-gray-300 rounded-lg px-4 py-2 w-full" required>
-        </div>
-        <div class="mt-6 text-center">
-            <button type="submit" name="importar_eventos" class="bg-indigo-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-indigo-700 transition-all">Importar Eventos</button>
         </div>
     </form>
 </div>
