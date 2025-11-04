@@ -75,12 +75,6 @@ body.criar-eventos-page textarea:focus {
     border-color: #f97316 !important;
 }
 
-/* Mantém compatibilidade com focus-visible polyfill/JS */
-.js-focus-visible body.login-page :focus:not(.focus-visible),
-.js-focus-visible body.evento-page :focus:not(.focus-visible),
-.js-focus-visible body.criar-eventos-page :focus:not(.focus-visible) {
-    outline: none !important;
-}
 
 /* Regra global: garante contorno laranja em todas as páginas */
 *:focus,
@@ -95,10 +89,7 @@ textarea:focus {
     border-color: #f97316 !important;
 }
 
-/* Não mostrar outline quando o foco não for por teclado (focus-visible) */
-.js-focus-visible *:focus:not(.focus-visible) {
-    outline: none !important;
-}
+/* Note: removed JS focus-visible suppression so focus outline is visible without JS polyfill */
 
 /* Mostrar borda laranja especificamente quando o foco vier do teclado */
 *:focus-visible,
