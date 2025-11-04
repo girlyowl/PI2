@@ -136,7 +136,7 @@ input:focus, select:focus, textarea:focus {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 12px !important; /* posiciona dentro do container para ficar sempre visível */
+    bottom: -20px !important; /* desce a paginação para ficar abaixo do card/carrossel */
     display: flex;
     justify-content: center;
     align-items: center;
