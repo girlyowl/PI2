@@ -33,22 +33,8 @@ function e($v) { return htmlspecialchars($v); }
     <link rel="stylesheet" href="styles.css">
     <!-- Container para notificações acessíveis -->
     <div id="notifications" role="status" aria-live="polite" class="sr-only"></div>
-    <style>
-        :focus {
-            outline: 3px solid #f97316; /* Cor laranja de destaque */
-            outline-offset: 2px;
-        }
-
-        .js-focus-visible :focus:not(.focus-visible) {
-            outline: none;
-        }
-
-        /* sr-only utility (revelar quando em foco) */
-        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
-        .sr-only:focus { position: static; width: auto; height: auto; margin: 0; overflow: visible; clip: auto; white-space: normal; }
-    </style>
 </head>
-<body class="bg-gray-50 min-h-screen">
+<body class="bg-gray-50 min-h-screen evento-page">
     <a href="#main-content" class="sr-only">Pular para o conteúdo</a>
     <header class="bg-[#4C32CC] text-white p-4 shadow-md">
         <div class="max-w-6xl mx-auto flex items-center justify-between" role="navigation" aria-label="Menu principal">
