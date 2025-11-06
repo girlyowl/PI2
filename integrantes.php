@@ -16,7 +16,7 @@ $integrantes = [
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Projeto Integrador 1 - Baixada em Cena</title>
+  <title>Projeto Integrador 2 - Baixada em Cena</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
@@ -28,7 +28,7 @@ $integrantes = [
   <!-- Menu -->
   <header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
     <nav class="max-w-7xl mx-auto flex justify-between items-center px-6 py-3">
-      <span class="text-base font-semibold text-blue-700">🎭 Projeto Integrador I - Baixada em Cena</span>
+      <span class="text-base font-semibold text-blue-700">🎭 Projeto Integrador II - Baixada em Cena</span>
       <ul class="flex space-x-5 text-xs font-medium">
         <li><a href="#sobre" class="hover:text-blue-600">Sobre</a></li>
         <li><a href="#integrantes" class="hover:text-blue-600">Integrantes</a></li>
@@ -44,12 +44,12 @@ $integrantes = [
     <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-2xl font-semibold text-blue-700 mb-5">Sobre o Projeto</h2>
       <div class="text-sm text-gray-700 leading-relaxed text-left">
-        <p class="mb-3"><strong class="text-blue-700">🎓 Título do Trabalho:</strong> <em>Baixada em Cena: Mapeamento e Promoção de Eventos Culturais na Baixada Santista</em></p>
+        <p class="mb-3"><strong class="text-blue-700">🎓 Título do Trabalho:</strong> <em>Baixada em Cena: Mapeamento e Promoção de Eventos Culturais na Baixada Santista + inclusiva</em></p>
         <p class="mb-3"><strong class="text-blue-700">👨‍🏫 Orientador do PI:</strong> Matheus Sanches de Sá Bergamo </p>
         <p class="mb-3"><strong class="text-blue-700">🎯 Objetivo Geral:</strong> Mapear e promover eventos culturais na Baixada Santista de maneira acessível.</p>
         <p><strong class="text-blue-700">📌 Objetivos Específicos:</strong></p>
         <ul class="list-disc list-inside ml-4 text-gray-600 mt-2">
-          <li>Identificar os principais desafios de acesso para pessoas com deficiência</li>
+          <li>Identificar os principais desafios de acesso para pessoas com deficiência;</li>
           <li>Desenvolver uma plataforma digital responsiva e acessível para centralizar informações sobre eventos culturais;</li>
           <li>Promover a participação da comunidade em atividades culturais.</li>
         </ul>
