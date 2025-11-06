@@ -7,7 +7,8 @@ $integrantes = [
     ["nome" => "Glaucio Dias de Jesus", "ra" => "23224964", "descricao" => "POLO: SÃO VICENTE"],
     ["nome" => "Tatiane Venancio dos Santos", "ra" => "23226311", "descricao" => "POLO: ITARIRI"],
     // ["nome" => "Claudiane Ferreira de Santana", "ra" => "2204838", "descricao" => "POLO: GUARUJÁ"],
-    ["nome" => "Ricardo Nonato Oliveira da Silva", "ra" => "23202002", "descricao" => "POLO: PRAIA GRANDE"]
+  ["nome" => "Ricardo Nonato Oliveira da Silva", "ra" => "23202002", "descricao" => "POLO: PRAIA GRANDE"],
+  ["nome" => "Mauricio Pereira da Silva", "ra" => "", "descricao" => "POLO: NÃO INFORMADO"]
 ];
 ?>
 
